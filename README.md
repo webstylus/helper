@@ -1,7 +1,30 @@
 ### Helpers
 
+Laravel 5.8
 Require bootstrap 4.4.1 min 
 Optional font awesome 5.13.0 min
+
+##### Installation and Configuration
+
+* Run command
+  
+        composer require lojazone/helper
+
+* Add to config/app.php
+    
+        'providers' => [
+            ...
+            /*
+             * Package Service Providers...
+             */
+            Lojazone\Helper\Providers\HelperServiceProvider::class,
+            ...
+        ],
+        
+        'aliases' => [
+            ...
+            'Helper' => \Lojazone\Helper\Support\Helper::class,
+        ]
 
 ##### Mix helpers to help
 
@@ -13,9 +36,21 @@ Optional font awesome 5.13.0 min
 ###### mix_url:
 this function to create base url with laravel mix compilation
 
+<small>How to use:</small>
+
+     <link rel="stylesheet" href="{{ Helper::mix_url('css/app.css') }}">
+     
+     Usage to create base url from compiling files with laravel-mix  
+
 ###### isActive:
 this function to add a css class to code is a link active or not
-
+    
+<small>How to use:</small>
+    
+    <a href="{{ route('blog.index') }}" class="{{ isActive('blog.index', 'my_class_active') }}">Blog</a>
+    
+    'my_class_active' class is optional or to use another class name.
+    
 ###### messages:
 this function to create messages using types class of bootstrap in your sessions
 
