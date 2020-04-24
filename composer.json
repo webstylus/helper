@@ -1,0 +1,28 @@
+{
+    "name": "lojazone/helper",
+    "description": "Package with helpers mixers",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rafael Pacífico",
+            "email": "rafael@webstylus.com.br"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lojazone\\Helper\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lojazone\\Helper\\Providers\\HelperServiceProvider"
+            ]
+        }
+    }
+}
